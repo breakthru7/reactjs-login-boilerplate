@@ -1,4 +1,5 @@
 import { authHeader } from '../_helpers';
+import { apiConstants } from '../_constants'
 
 export const userService = {
     login,
@@ -13,11 +14,13 @@ export const userService = {
 function login(username, password) {
     const requestOptions = {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password , "email" : username })
     };
-
-    return fetch('/users/authenticate', requestOptions)
+    
+    return fetch(apiConstants.ENDPOINT + '/users/authenticate', requestOptions)
         .then(response => {
             if (!response.ok) { 
                 return Promise.reject(response.statusText);
@@ -47,7 +50,7 @@ function getAll() {
         headers: authHeader()
     };
 
-    return fetch('/users', requestOptions).then(handleResponse);
+    return fetch(apiConstants + '/users', requestOptions).then(handleResponse);
 }
 
 function getById(id) {
@@ -67,7 +70,7 @@ function register(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch('/users/register', requestOptions).then(handleResponse);
+    return fetch(apiConstants + '/users/register', requestOptions).then(handleResponse);
 }
 
 function update(user) {
@@ -77,7 +80,7 @@ function update(user) {
         body: JSON.stringify(user)
     };
 
-    return fetch('/users/' + user.id, requestOptions).then(handleResponse);;
+    return fetch(apiConstants + '/users/' + user.id, requestOptions).then(handleResponse);;
 }
 
 // prefixed function name with underscore because delete is a reserved word in javascript
@@ -87,7 +90,7 @@ function _delete(id) {
         headers: authHeader()
     };
 
-    return fetch('/users/' + id, requestOptions).then(handleResponse);;
+    return fetch(apiConstants + '/users/' + id, requestOptions).then(handleResponse);;
 }
 
 function handleResponse(response) {
