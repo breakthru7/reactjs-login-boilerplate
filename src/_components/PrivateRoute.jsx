@@ -21,4 +21,7 @@ export const PrivateRoute = ({ component : Component, ...rest}) => (
 
     - inline render Route components , if user found in localStorage , return the component passed in 
       else redirect to login 
+
+    - render prop is used here to avoid component for PrivateRoute remounted but instead the same component is 
+    updated and the component's props also passed along 
 */

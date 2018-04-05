@@ -22,28 +22,36 @@ class App extends React.Component
         });
     }
 
+
     render(){
             const {alert} = this.props;
             return (
-                <div className="jumbotron">
-                    <div className="container">
-                        <div className="col-sm-8 col-sm-offset-2">
-                            {alert.message && 
-                                <div className={`alert ${alert.type}`}>{alert.message}</div>
-                            }
-                            <Router history = {history}>
-                                <div>
-                                    <PrivateRoute exact path="/" component={HomePage} />
-                                    <Route path="/login" component={LoginPage} />
-                                    <Route path="/register" component={RegisterPage} />
-                                </div>
-                            </Router>
+                <div>
+                    {alert.message && 
+                        <div className={`alert ${alert.type}`}>{alert.message}</div>
+                    }
+                    <Router history = {history}>
+                        <div>
+                            <PrivateRoute exact path="/" component={HomePage} />
+                            <Route path="/login" component={ wrapHOC(LoginPage) } />
+                            <Route path="/register" component={wrapHOC(RegisterPage)} />
+                            
                         </div>
-                    </div>
+                    </Router>
                 </div>
             );
     }
 }
+
+const wrapHOC = (WrappedComponent) => (props) => (
+    <div className="jumbotron">
+        <div className="container">
+            <div className="col-sm-8 col-sm-offset-2">
+                <WrappedComponent {...props}/>
+            </div>
+        </div>
+    </div>
+  );
 
 //take piece of data(state) from the store and pass it to the component as props 
 function mapStateToProps(state) {
