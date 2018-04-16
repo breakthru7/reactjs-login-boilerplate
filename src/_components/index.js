@@ -1,4 +1,4 @@
 export * from './PrivateRoute';
 export * from './Header';
-export * from './Content';
+export * from './Dashboard';
 export * from './Sidebar';

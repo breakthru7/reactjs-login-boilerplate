@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom'
 
 export class Header extends Component {
     render(){
@@ -17,9 +18,23 @@ export class Header extends Component {
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 
-                                <span class="hidden-xs">{ this.props.username }</span>
+                                    <span class="hidden-xs">{ this.props.username }</span>
                                 </a>
-                                
+                                <ul class="dropdown-menu">
+                                    <li class="user-header">
+                                        <p>{ this.props.username } </p>
+                                    </li>
+                                    <li class="user-body">
+                                    </li>
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <Link to="/login" className="btn btn-default btn-flat">Logout</Link>
+                                        </div>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
