@@ -15,22 +15,22 @@ export class Header extends Component {
                     </a>
                     <div className="navbar-custom-menu">
                         <ul className="nav navbar-nav">     
-                            <li class="dropdown user user-menu">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <li className="dropdown user user-menu">
+                                <a href="#" className="dropdown-toggle" data-toggle="dropdown">
                                 
-                                    <span class="hidden-xs">{ this.props.username }</span>
+                                    <span className="hidden-xs">{ this.props.username }</span>
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li class="user-header">
+                                <ul className="dropdown-menu">
+                                    <li className="user-header">
                                         <p>{ this.props.username } </p>
                                     </li>
-                                    <li class="user-body">
+                                    <li className="user-body">
                                     </li>
-                                    <li class="user-footer">
-                                        <div class="pull-left">
+                                    <li className="user-footer">
+                                        <div className="pull-left">
                                             <a href="#" class="btn btn-default btn-flat">Profile</a>
                                         </div>
-                                        <div class="pull-right">
+                                        <div className="pull-right">
                                             <Link to="/login" className="btn btn-default btn-flat">Logout</Link>
                                         </div>
                                     </li>

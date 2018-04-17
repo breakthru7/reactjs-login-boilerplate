@@ -109,4 +109,5 @@ function _delete(id) {
     - .then method returned a promise that takes up 2 arguements : callback functions for success/failure
 
     - calling an async API need to dispatch at least 3 actions : request , success , failure 
+    - when dispatch called , the Redux action payload will be returned , which then trigger the reducer 
 */

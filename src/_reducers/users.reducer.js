@@ -54,3 +54,10 @@ export function users(state = {}, action) {
         return state
     }
 }
+
+/* Dev note : 
+    - reducer : takes in previous state and action then update part of application state and return next state
+              : describe how state change happened
+              : reducer triggered from action , and based on the payload , update the Redux application state 
+              : reducer is also where we can check for application state 
+*/

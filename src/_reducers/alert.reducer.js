@@ -18,8 +18,3 @@ export function alert(state = {}, action) {
         return state
     }
   }
-
-/* Dev note : 
-    - reducer : takes in previous state and action then update part of application state and return next state
-              : describe how state change happened
-*/

@@ -25,7 +25,7 @@ class HomePage extends React.Component {
         const match = this.props.match;
 
         return (
-            <div class="hold-transition skin-blue sidebar-mini">
+            <div className="hold-transition skin-blue sidebar-mini">
                 <Header username={ user.username } />
                 <Sidebar />
 
