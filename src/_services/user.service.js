@@ -29,6 +29,7 @@ function login(username, password) {
             return response.json();
         })
         .then(user => {
+            // user object here is bind from response.json() from previous .then  
             // login successful if there's a jwt token in the response
             if (user && user.token) {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
