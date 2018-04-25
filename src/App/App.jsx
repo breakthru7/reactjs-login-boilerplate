@@ -37,7 +37,7 @@ class App extends React.Component
                                 <PrivateRoute path="/home" component={ HomePage } />
                                 <Route path="/login" component={ wrapHOC(LoginPage) } />
                                 <Route path="/register" component={wrapHOC(RegisterPage)} />
-                                <Route path="/" component={ PrivateRoute } />
+                                <Redirect from="/" to="home"/>
                             </Switch>   
                         </div>
                     </Router>
