@@ -37,7 +37,7 @@ class App extends React.Component
                                 <PrivateRoute path="/home" component={ HomePage } />
                                 <Route path="/login" component={ wrapHOC(LoginPage) } />
                                 <Route path="/register" component={wrapHOC(RegisterPage)} />
-                                <Route path="/" component={ HomePage } />
+                                <Route path="/" component={ PrivateRoute } />
                             </Switch>   
                         </div>
                     </Router>
@@ -69,9 +69,3 @@ function mapStateToProps(state) {
 //export the App which is already connected to the store and using alert 
 const connectedApp = connect(mapStateToProps)(App);
 export { connectedApp as App }; 
-
-/*-- dev notes --
-- this is the main Application 
-- mapStateToProps is the CONTAINER part of Redux to connect store and components 
-- exporting App as a 'named export' (without default) , imported with exact name {App}
-----*/

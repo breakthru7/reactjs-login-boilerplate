@@ -106,19 +106,3 @@ function mapStateToProps(state) {
 const connectedRegisterPage = connect(mapStateToProps)(RegisterPage);
 export { connectedRegisterPage as RegisterPage };
 
-
-/* 
-
-    Dev note : 
-    In HandleChange method 
-    this.setstate({
-            user : {
-                ...user , 
-                [name] : value 
-            }
-        })
-
-    , it will only set the specific target name and value and set it in computed property in [name] : value 
-    while the rest of user remains with ...user 
-
-*/

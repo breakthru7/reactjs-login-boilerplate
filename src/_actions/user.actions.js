@@ -97,17 +97,3 @@ function _delete(id) {
     function success(id) { return { type: userConstants.DELETE_SUCCESS, id } }
     function failure(id, error) { return { type: userConstants.DELETE_FAILURE, id, error } }
 }
-
-/* 
-    Dev Note :
-    - usually in actionCreator , there can be method performed and then a plain JSON object returned as Action 
-    - Action need to have "type" and "payload" (which can be anything else) properties 
-
-    - ActionCreator is returning function instead of actions here because of Thunk middleware , which
-      is to support Async 
-
-    - .then method returned a promise that takes up 2 arguements : callback functions for success/failure
-
-    - calling an async API need to dispatch at least 3 actions : request , success , failure 
-    - when dispatch called , the Redux action payload will be returned , which then trigger the reducer 
-*/

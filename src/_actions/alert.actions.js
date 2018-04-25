@@ -26,10 +26,3 @@ function clear() {
         type: alertConstants.CLEAR 
     };
 }
-
-/*--- Dev note : Define action creators (function that create action) --- //
- (actions are plan JS object or payload that send data to store when application state changed , 
-    described something happened )
-    
-    - only type property is required 
-*/

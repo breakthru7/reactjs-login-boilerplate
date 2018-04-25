@@ -93,35 +93,3 @@ function mapStateToProps(state){
 
 const connectedLoginPage = connect(mapStateToProps)(LoginPage);
 export  {connectedLoginPage as LoginPage};
-
-/* 
-    Dev note : 
-    - mapStateToProps is an implementation of Container part in Redux 
-    - Container is actually part of the component that take piece of the state from store and pass it to component 
-    - const { loggingIn  } =  state.authentication is es6 destructuring of object in shorthand
-    - can be written as 
-         const { loggingIn : loggingIn  } =  state.authentication
-
-        let loggingIn ; 
-        if( state.authentication.loggingIn === undefined) loggingIn = undefined 
-        else loggingIn = state.authentication.loggingIn
-
-    - loggingIn can be accessed because it is returned from authentication.reducer > store > hooked to App
-
-    - during handlechange , create computed property [name] and assign value to it 
-    -  const { name , value } = e.target; 
-        this.setState({  [name] : value }] 
-    }
-    equivalent to
-    
-    const { name : name , value : value } = e.target; 
-    const name = e.target.name 
-    const value = e.target.value 
-
-    if e.target from <input name='username' value='123' /> : 
-    this.setState({  [name] : value }]
-    this.setState({ username : 123 }]
-    
-    - during submit , destructure username , password from the state , get dispatch from props and dispatch it 
-      using the userAction.login . Also update submitted state to true 
-*/

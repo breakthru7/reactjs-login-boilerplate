@@ -18,6 +18,4 @@ registerServiceWorker();
 /*-- dev notes --
 - this is the entry point to the app
 - hook the App component to the store provider , where the store is exporting a combined items of all reducers
-
-
 ----*/
