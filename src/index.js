@@ -6,7 +6,11 @@ import { store } from './_helpers'
 import { configureFakeBackend } from './_helpers'
 import registerServiceWorker from './registerServiceWorker';
 
+
+configureFakeBackend(); 
+
 ReactDOM.render(
+
     <Provider store = { store }>
         <App />
     </Provider>, 
