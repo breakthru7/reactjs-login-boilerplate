@@ -6,7 +6,7 @@ testing in case API isn't ready yet .
 ### Components
 
 - Redux is used for state handling 
-- API endpoint changed from api.constants.js
+- API endpoint settings from api.constants.js
 
 ### Installing
 
