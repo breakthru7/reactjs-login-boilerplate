@@ -1,12 +1,12 @@
 # ReactJS Login Boilerplate
 
-This project serve as fast startup project for API login and dashboard ready with Admin-LTE . There is a fake-backend for 
-testing in case API isn't ready yet .  
+This project serve as fast startup project for API login and dashboard ready with Admin-LTE . It is built from Create-React-App and https://github.com/cornflourblue/react-redux-registration-login-example
 
 ### Components
 
 - Redux is used for state handling 
 - API endpoint settings from api.constants.js
+- fake-backend for testing in case API isn't ready yet .  
 
 ### Installing
 
